@@ -50,11 +50,11 @@ SelectLR: &SelectLR {type: select, proxies: [低倍率线路, 高质量线路, �
 # ==================== 代理提供者 ====================
 proxy-providers:
   # 优质订阅源 - 优质节点集合，使用时请修改
-  优质服务商: {<<: *BaseProvider, url: '优质订阅源地址', override: {additional-prefix: '[优] '}}
+  优质服务商: {<<: *BaseProvider, url: 'https://sub.yyysub.dpdns.org/qxE7x81pze0nR8uaUBHM/download/collection/%E4%B8%BB%E8%A6%81', override: {additional-prefix: '[优] '}}
   # 备用订阅源 - 次优节点集合，使用时请修改
-  备用服务商: {<<: *BaseProvider, url: '备用订阅源地址', override: {additional-prefix: '[备] '}}
+  备用服务商: {<<: *BaseProvider, url: 'https://sub.yyysub.dpdns.org/qxE7x81pze0nR8uaUBHM/download/collection/%E5%A4%87%E7%94%A8', override: {additional-prefix: '[备] '}}
   # 落地订阅源 - 落地服务连接，使用时请修改
-  落地服务商: {<<: *BaseProvider, url: '落地订阅源地址', override: {additional-prefix: '[中] ', dialer-proxy: 中转服务}}
+  落地服务商: {<<: *BaseProvider, url: 'https://sub.yyysub.dpdns.org/qxE7x81pze0nR8uaUBHM/download/collection/%E9%A2%9D%E5%A4%96', override: {additional-prefix: '[中] ', dialer-proxy: 中转服务}}
 
 # ==================== 监听器 ====================
 listeners:
@@ -222,6 +222,16 @@ rules:
   - RULE-SET,Facebook,脸书服务
   - RULE-SET,Proxy,国外流量
   - RULE-SET,China,国内流量
+  - PROCESS-NAME,com.mountains.hills,Emby服
+  - PROCESS-NAME,com.hush.hills,Emby服
+  - DOMAIN-SUFFIX,emos.lol,Emby服
+  - DOMAIN-SUFFIX,mini.jmsuper.com,Emby服
+  - DOMAIN-SUFFIX,tanhuatv.site,Emby服
+  - DOMAIN-SUFFIX,lite.liminalnet.com,Emby服
+  - DOMAIN-SUFFIX,empn.mom,Emby服
+  - DOMAIN-SUFFIX,media.nijigem.by,美国智能
+  - DOMAIN-SUFFIX,link00.okemby.org,香港智能
+  - DOMAIN-KEYWORD,emby,Emby服
 
   # IP规则
   - RULE-SET,AdvertisingIP,REJECT,no-resolve
